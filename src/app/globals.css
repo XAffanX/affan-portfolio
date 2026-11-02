@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #151a18;
+  color: #ece8df;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  /* soft pool of light behind the board, no gradients on the text side */
+  background-image: radial-gradient(60% 55% at 68% 48%, #1d2824 0%, #151a18 70%);
+  background-attachment: fixed;
+  min-height: 100dvh;
+}
+
+::selection {
+  background: #c98b5b;
+  color: #151a18;
+}
+
+/* Floating tag above a hovered chip (rendered by drei <Html>) */
+.chip-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  padding: 5px 10px 5px 6px;
+  border-radius: 999px;
+  background: #ece8df;
+  color: #151a18;
+  font: 500 12px/1 var(--font-sans), sans-serif;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transform: translateY(-4px);
+  animation: tag-in 220ms ease-out both;
+}
+.chip-tag-code {
+  font: 600 10px/1 var(--font-mono), monospace;
+  letter-spacing: 0.08em;
+  padding: 4px 6px;
+  border-radius: 999px;
+  background: #151a18;
+  color: #e2b48c;
+}
+@keyframes tag-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(-4px); }
+}
+
+/* Thin scrollbar inside the project panel */
+.panel-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #2c3833 transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip-tag { animation: none; }
+}
