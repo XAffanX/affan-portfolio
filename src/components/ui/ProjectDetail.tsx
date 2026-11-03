@@ -77,16 +77,34 @@ export function ProjectDetail({ project: p }: { project: Project }) {
         </p>
       )}
 
-      <a
-        data-reveal
-        href={p.repo}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-8 inline-flex items-center gap-2 rounded-full bg-paper px-4 py-2 text-[13px] font-medium text-ink transition-colors hover:bg-copper-light"
-      >
-        View on GitHub
-        <span aria-hidden>↗</span>
-      </a>
+      <div data-reveal className="mt-8 flex flex-wrap gap-2.5">
+        {p.paper && (
+          <a
+            href={p.paper.href}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-paper px-4 py-2 text-[13px] font-medium text-ink transition-colors hover:bg-copper-light"
+          >
+            {p.paper.label}
+            <span aria-hidden>↗</span>
+          </a>
+        )}
+        {p.repo && (
+          <a
+            href={p.repo}
+            target="_blank"
+            rel="noreferrer"
+            className={
+              p.paper
+                ? 'inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-[13px] text-paper/85 transition-colors hover:border-copper hover:text-paper'
+                : 'inline-flex items-center gap-2 rounded-full bg-paper px-4 py-2 text-[13px] font-medium text-ink transition-colors hover:bg-copper-light'
+            }
+          >
+            View on GitHub
+            <span aria-hidden>↗</span>
+          </a>
+        )}
+      </div>
     </article>
   );
 }

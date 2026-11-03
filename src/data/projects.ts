@@ -11,7 +11,8 @@ export interface ProjectImage {
 export interface Project {
   slug: string;
   name: string;
-  repo: string;
+  repo?: string;
+  paper?: { label: string; href: string };
   summary: string;
   description: string[];
   tech: string[];
@@ -46,6 +47,7 @@ export const PROFILE = {
   links: [
     { label: 'GitHub', href: 'https://github.com/XAffanX' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/affan-fahim-khan' },
+    { label: 'Research', href: 'https://osf.io/evpcn/' },
     { label: 'Email', href: 'mailto:affanfahimkhanofficial@gmail.com' },
   ],
 };
@@ -178,6 +180,25 @@ export const PROJECTS: Record<string, Project> = {
     ],
     images: [],
   },
+  'signature-cnn': {
+    slug: 'signature-cnn',
+    name: 'Offline Signature Recognition with CNNs',
+    paper: { label: 'Read the paper on OSF', href: 'https://osf.io/evpcn/' },
+    summary:
+      'A reproduction study of a CNN for offline handwritten signature recognition, telling genuine signatures from forgeries in static images. Published on Open Science Framework.',
+    description: [
+      'Research project from the Machine Learning curriculum at BRAC University: “Implementation and Performance Analysis of CNN Architectures for Offline Signature Recognition: A Reproduction Study.”',
+      'The model is a custom CNN with stacked convolutional layers, max-pooling for spatial reduction and dense layers for classification, trained with the Adam optimizer and binary cross-entropy loss. It learns stroke-level spatial patterns directly from the images instead of relying on hand-crafted features.',
+      'Evaluated on the MCYT-75, TMS and Mendeley signature datasets, the reproduced model reached 95.15% test accuracy, supporting the original architecture’s results.',
+    ],
+    tech: ['Python', 'TensorFlow / Keras', 'CNNs', 'Image preprocessing', 'Model evaluation'],
+    challenges: [
+      'Reproducing a published result means matching the original preprocessing and architecture closely enough that the comparison is meaningful.',
+      'Signatures vary between samples from the same person, so the model has to separate that natural variation from forgeries.',
+    ],
+    status: 'Published as an open-science project with the full paper on OSF.',
+    images: [],
+  },
   'signal-processing': {
     slug: 'signal-processing',
     name: 'Signal & Image Processing Labs',
@@ -231,9 +252,9 @@ export const CATEGORIES: Category[] = [
   {
     id: 'software',
     chip: 'SOFTWARE',
-    title: 'Software & Signal Processing',
-    blurb: 'Desktop tools, numerical methods and signal processing.',
-    projects: ['snaplite', 'signal-processing'],
+    title: 'Software & Machine Learning',
+    blurb: 'Deep learning research, desktop tools and signal processing.',
+    projects: ['signature-cnn', 'snaplite', 'signal-processing'],
   },
 ];
 

@@ -133,8 +133,11 @@ export function ProjectPanel({ reducedMotion, isDesktop }: { reducedMotion: bool
                           </span>
                         </span>
                         <span className="mt-1.5 block text-[13.5px] leading-relaxed text-paper/60">{p.summary}</span>
-                        <span className="mt-3 block font-mono text-[10.5px] tracking-[0.04em] text-mint/80">
-                          {p.tech.slice(0, 4).join('  ·  ')}
+                        <span className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[10.5px] tracking-[0.04em] text-mint/80">
+                          {p.paper && (
+                            <span className="rounded-full border border-copper/60 px-2 py-0.5 text-copper-light">Paper</span>
+                          )}
+                          <span>{p.tech.slice(0, 4).join('  ·  ')}</span>
                         </span>
                       </span>
                     </button>
