@@ -21,7 +21,7 @@ function Silkscreen() {
     g.fillStyle = 'rgba(214,222,212,0.42)';
     g.font = `500 44px ${mono}`;
     g.textBaseline = 'middle';
-    g.fillText('A.F.KHAN  ·  PORTFOLIO  ·  REV 1.0', 8, 64);
+    g.fillText('AFFAN KHAN  ·  PORTFOLIO  ·  REV 1.1', 8, 64);
     const t = new THREE.CanvasTexture(c);
     t.colorSpace = THREE.SRGBColorSpace;
     t.anisotropy = 8;

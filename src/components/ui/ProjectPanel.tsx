@@ -103,7 +103,7 @@ export function ProjectPanel({ reducedMotion, isDesktop }: { reducedMotion: bool
           <ProjectDetail key={detail.slug} project={detail} />
         ) : (
           <>
-            <h2 data-reveal className="font-display text-[2.6rem] leading-[1] text-paper">
+            <h2 data-reveal className="font-display text-[2.3rem] font-semibold leading-[1.05] tracking-[-0.02em] text-paper">
               {cat.title}
             </h2>
             <p data-reveal className="mt-3 text-[14px] text-paper/65">
@@ -122,7 +122,7 @@ export function ProjectPanel({ reducedMotion, isDesktop }: { reducedMotion: bool
                       <span className="pt-1 font-mono text-[11px] text-mute">{String(i + 1).padStart(2, '0')}</span>
                       <span>
                         <span className="flex items-baseline justify-between gap-4">
-                          <span className="text-[17px] text-paper transition-colors group-hover:text-copper-light group-focus-visible:text-copper-light">
+                          <span className="text-[17px] font-semibold text-paper transition-colors group-hover:text-copper-light group-focus-visible:text-copper-light">
                             {p.name}
                           </span>
                           <span

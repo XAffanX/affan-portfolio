@@ -9,10 +9,10 @@ export function ProjectDetail({ project: p }: { project: Project }) {
 
   return (
     <article>
-      <h2 data-reveal className="font-display text-[2.3rem] leading-[1.02] text-paper">
+      <h2 data-reveal className="font-display text-[2.05rem] font-semibold leading-[1.08] tracking-[-0.02em] text-paper">
         {p.name}
       </h2>
-      <p data-reveal className="mt-3 text-[14.5px] leading-relaxed text-paper/75">
+      <p data-reveal className="mt-3 text-[14.5px] font-[450] leading-relaxed text-paper/85">
         {p.summary}
       </p>
 
@@ -42,7 +42,7 @@ export function ProjectDetail({ project: p }: { project: Project }) {
         </figure>
       )}
 
-      <section data-reveal className="mt-7 space-y-3 text-[14px] leading-relaxed text-paper/80">
+      <section data-reveal className="mt-7 space-y-3 text-[14px] leading-relaxed text-paper/85">
         {p.description.map((d, i) => (
           <p key={i}>{d}</p>
         ))}

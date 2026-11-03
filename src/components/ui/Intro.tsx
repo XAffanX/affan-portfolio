@@ -48,12 +48,12 @@ export function Intro({ reducedMotion, isDesktop }: { reducedMotion: boolean; is
       <p data-reveal className="font-mono text-[11px] uppercase tracking-[0.22em] text-copper">
         {PROFILE.role} · {PROFILE.location}
       </p>
-      <h1 data-reveal className="mt-4 font-display text-[clamp(3rem,6.4vw,5.6rem)] leading-[0.92] tracking-[-0.01em] text-paper">
-        Affan Fahim
+      <h1 data-reveal className="mt-4 font-display text-[clamp(3.2rem,7vw,6.2rem)] font-semibold leading-[0.95] tracking-[-0.025em] text-paper">
+        Affan
         <br />
-        <span className="italic text-copper-light">Khan</span>
+        <span className="font-medium italic text-copper-light">Khan</span>
       </h1>
-      <p data-reveal className="mt-6 max-w-[34rem] text-[15px] leading-relaxed text-paper/75">
+      <p data-reveal className="mt-6 max-w-[34rem] text-[15.5px] font-[450] leading-relaxed text-paper/85">
         {PROFILE.intro}
       </p>
 
@@ -80,7 +80,7 @@ export function Intro({ reducedMotion, isDesktop }: { reducedMotion: boolean; is
                   >
                     {c.chip}
                   </span>
-                  <span className={`flex-1 text-[15px] transition-colors ${lit ? 'text-paper' : 'text-paper/70'}`}>
+                  <span className={`flex-1 text-[15px] font-medium transition-colors ${lit ? 'text-paper' : 'text-paper/75'}`}>
                     {c.title}
                   </span>
                   <span
@@ -102,7 +102,7 @@ export function Intro({ reducedMotion, isDesktop }: { reducedMotion: boolean; is
             href={l.href}
             target={l.href.startsWith('http') ? '_blank' : undefined}
             rel="noreferrer"
-            className="text-paper/80 underline decoration-line decoration-1 underline-offset-[6px] transition-colors hover:text-copper-light hover:decoration-copper"
+            className="font-medium text-paper/85 underline decoration-line decoration-1 underline-offset-[6px] transition-colors hover:text-copper-light hover:decoration-copper"
           >
             {l.label}
           </a>
@@ -112,7 +112,7 @@ export function Intro({ reducedMotion, isDesktop }: { reducedMotion: boolean; is
       <dl data-reveal className="mt-9 grid max-w-[30rem] gap-2 text-[12px] leading-snug">
         {PROFILE.education.map((e) => (
           <div key={e.school} className="flex flex-wrap gap-x-2">
-            <dt className="text-paper/70">{e.school}</dt>
+            <dt className="font-medium text-paper/75">{e.school}</dt>
             <dd className="text-mute">{e.detail}</dd>
           </div>
         ))}
