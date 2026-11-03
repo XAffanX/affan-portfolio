@@ -43,21 +43,23 @@ export function Intro({ reducedMotion, isDesktop }: { reducedMotion: boolean; is
   return (
     <div
       ref={root}
-      className="relative z-10 px-6 pb-16 pt-8 sm:px-10 lg:pointer-events-auto lg:absolute lg:inset-y-0 lg:left-0 lg:flex lg:w-[min(44vw,560px)] lg:flex-col lg:justify-center lg:px-14 lg:py-12"
+      className="relative z-10 px-6 pb-16 pt-8 sm:px-10 lg:pointer-events-auto lg:absolute lg:inset-y-0 lg:left-0 lg:flex lg:w-[min(44vw,560px)] lg:flex-col lg:overflow-y-auto lg:px-14 lg:py-6 panel-scroll"
     >
+      {/* my-auto centres the column when it fits and lets it scroll when it doesn't */}
+      <div className="lg:my-auto">
       <p data-reveal className="font-mono text-[11px] uppercase tracking-[0.22em] text-copper">
         {PROFILE.role} · {PROFILE.location}
       </p>
-      <h1 data-reveal className="mt-4 font-display text-[clamp(3.2rem,7vw,6.2rem)] font-semibold leading-[0.95] tracking-[-0.025em] text-paper">
+      <h1 data-reveal className="mt-4 font-display text-[clamp(2.6rem,min(7vw,9.2vh),6.2rem)] font-semibold leading-[0.95] tracking-[-0.025em] text-paper">
         Affan
         <br />
         <span className="font-medium italic text-copper-light">Khan</span>
       </h1>
-      <p data-reveal className="mt-6 max-w-[34rem] text-[15.5px] font-[450] leading-relaxed text-paper/85">
+      <p data-reveal className="mt-[min(1.5rem,2.6vh)] max-w-[34rem] text-[15.5px] font-[450] leading-relaxed text-paper/85">
         {PROFILE.intro}
       </p>
 
-      <nav data-reveal aria-label="Project categories" className="mt-9">
+      <nav data-reveal aria-label="Project categories" className="mt-[min(2.25rem,3vh)]">
         <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.22em] text-mute">Explore the board</p>
         <ul className="max-w-[30rem] border-t border-line">
           {CATEGORIES.map((c) => {
@@ -71,7 +73,7 @@ export function Intro({ reducedMotion, isDesktop }: { reducedMotion: boolean; is
                   onFocus={() => store.hover(c.id)}
                   onBlur={() => store.hover(null)}
                   onClick={() => store.select(c.id)}
-                  className="group flex w-full items-center gap-4 py-3 text-left outline-none"
+                  className="group flex w-full items-center gap-4 py-[min(0.75rem,1vh)] text-left outline-none"
                 >
                   <span
                     className={`w-[5.5rem] font-mono text-[11px] tracking-[0.12em] transition-colors ${
@@ -95,7 +97,7 @@ export function Intro({ reducedMotion, isDesktop }: { reducedMotion: boolean; is
         </ul>
       </nav>
 
-      <div data-reveal className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[13px]">
+      <div data-reveal className="mt-[min(2rem,2.6vh)] flex flex-wrap gap-x-6 gap-y-2 text-[13px]">
         {PROFILE.links.map((l) => (
           <a
             key={l.label}
@@ -109,14 +111,19 @@ export function Intro({ reducedMotion, isDesktop }: { reducedMotion: boolean; is
         ))}
       </div>
 
-      <dl data-reveal className="mt-9 grid max-w-[30rem] gap-2 text-[12px] leading-snug">
+      <dl data-reveal className="mt-[min(2.25rem,2.8vh)] grid max-w-[30rem] gap-[min(0.75rem,1vh)] text-[12px] leading-snug">
         {PROFILE.education.map((e) => (
-          <div key={e.school} className="flex flex-wrap gap-x-2">
-            <dt className="font-medium text-paper/75">{e.school}</dt>
-            <dd className="text-mute">{e.detail}</dd>
+          <div key={e.school}>
+            <dt className="font-medium text-paper/80">{e.school}</dt>
+            {e.lines.map((line) => (
+              <dd key={line} className="mt-0.5 text-mute">
+                {line}
+              </dd>
+            ))}
           </div>
         ))}
       </dl>
+      </div>
     </div>
   );
 }

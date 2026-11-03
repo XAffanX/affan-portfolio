@@ -40,9 +40,15 @@ export const PROFILE = {
     'Computer engineering student working across FPGA tooling, digital hardware, PCB design and power electronics. ' +
     'I like taking a circuit from the analysis on paper to a simulation, then to something on the bench.',
   education: [
-    { school: 'University of Maryland, Baltimore County', detail: 'Computer Engineering · upcoming junior' },
-    { school: 'Howard Community College', detail: 'Computer Engineering (A.S.E.) · Aug 2026 – Dec 2026' },
-    { school: 'BRAC University', detail: 'Electrical and Electronic Engineering · 2024 – 2026' },
+    { school: 'University of Maryland, Baltimore County', lines: ['Computer Engineering · upcoming junior'] },
+    {
+      school: 'Howard Community College',
+      lines: ['Computer Engineering (A.S.E.) · Aug 2026 – Dec 2026', 'Phi Theta Kappa Honor Society'],
+    },
+    {
+      school: 'BRAC University',
+      lines: ['Electrical and Electronic Engineering · 2024 – 2026', "GPA 3.95 / 4.0 · Vice Chancellor's List"],
+    },
   ],
   links: [
     { label: 'GitHub', href: 'https://github.com/XAffanX' },
