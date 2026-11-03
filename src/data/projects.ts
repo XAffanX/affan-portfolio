@@ -41,8 +41,8 @@ export const PROFILE = {
     'I like taking a circuit from the analysis on paper to a simulation, then to something on the bench.',
   education: [
     { school: 'University of Maryland, Baltimore County', detail: 'Computer Engineering · upcoming junior' },
-    { school: 'Howard Community College', detail: 'Computer Engineering · A.S.E. expected Dec 2026' },
-    { school: 'BRAC University', detail: 'Electronics Engineering · transferred' },
+    { school: 'Howard Community College', detail: 'Computer Engineering (A.S.E.) · Aug 2026 – Dec 2026' },
+    { school: 'BRAC University', detail: 'Electrical and Electronic Engineering · 2024 – 2026' },
   ],
   links: [
     { label: 'GitHub', href: 'https://github.com/XAffanX' },
